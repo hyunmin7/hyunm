@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <!-- custom style sheet -->
+  <link rel="stylesheet" type="text/css" href="ex1.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>stylechange</title>
+  <style>
+   .ex1 {width:904px !important;}
+   .display-4 {color:#000 !important; font-family:"Noto Sans KR", sans-serif;}
+   .lead {color:#000 !important; font-size:15px;}
+   .inputBox {width: 500px;
+    margin: 0 auto 30px;
+    border: 5px solid #000;
+    border-radius: 8px;
+    padding: 30px;}
+      .inputBox > p > span {font-size:14px; color:#000 !important;}
+      input {width: 100%;}
+      textArea {width:100%;}
+  </style>
+  <script>
+  $(function(){
+   $(".card").mouseover(function(){
+      $(this).css({"backgroundColor":"red"})
+   }).mouseout(function(){
+      $(this).css({"backgroundColor":"unset"})
+   });
+  });
+  </script>
+
+ </head>
+ <body>
+   <!-- <div>
+      <h1 class="ptag" id="h1" >두번째 수업입니다!</h1>
+      inline 적용방식이 우선순위가 제일 높다. 그 다음에 class, 그 다음이 tag
+      <p>안녕하세요.</p>
+      <p class="ptag">두번째 p 태그입니다.</p>
+
+      <button type="button" class="btn btn-primary" id="btn1">Primary</button>
+      <button type="button" class="btn btn-primary" id="btn1">Primary</button>
+   </div> -->
+   <div class="jumbotron">
+     <h1 class="display-4">나홀로 링크 메모장</h1>
+     <p class="lead">글을 읽고 난 뒤 들었던 내 생각들. 단상. 나는 무엇을 읽고, 무엇을 생각했는가?</p>
+     <hr class="my-4">
+     <a class="btn btn-primary btn-lg" href="#none" role="button">포스팅 박스 열기</a>
+   </div>
+   <div class="inputBox" style="">
+      <div>
+         <p>
+            <span>아티클 URL</span><br/>
+            <input type="text" id="" name="" />
+         </p>
+         <p>
+            <span>간단 코멘트</span><br/>
+            <textarea></textarea>
+         </p>
+         <a class="btn btn-primary btn-lg" href="#none" role="button">기사 저장</a>
+      </div>
+   </div>
+   <div class="ex1">
+      <div class="ex2">
+         <div class="card" style="width: 18rem;">
+           <img src="img/nature-benefits.jpg.860x0_q70_crop-scale.jpg" class="card-img-top" alt="...">
+           <div class="card-body">
+            <h5 class="card-title">예를 들면 이렇게 카드가 나옵니다!!</h5>
+            <p class="card-text">여기에 기사 내용이 들어가겠죠.</p>
+            <p class="card-text" style="color:blue !important; font-weight:800;">여기에 코멘트가 들어갑니다.</p>
+           </div>
+         </div>
+         <div class="card" style="width: 18rem;">
+           <img src="img/nature-benefits.jpg.860x0_q70_crop-scale.jpg" class="card-img-top" alt="...">
+           <div class="card-body">
+            <h5 class="card-title">예를 들면 이렇게 카드가 나옵니다!!</h5>
+            <p class="card-text">여기에 기사 내용이 들어가겠죠.</p>
+            <p class="card-text" style="color:blue !important; font-weight:800;">여기에 코멘트가 들어갑니다.</p>
+           </div>
+         </div>
+         <div class="card" style="width: 18rem;">
+           <img src="img/nature-benefits.jpg.860x0_q70_crop-scale.jpg" class="card-img-top" alt="...">
+           <div class="card-body">
+            <h5 class="card-title">예를 들면 이렇게 카드가 나옵니다!!</h5>
+            <p class="card-text">여기에 기사 내용이 들어가겠죠.</p>
+            <p class="card-text" style="color:blue !important; font-weight:800;">여기에 코멘트가 들어갑니다.</p>
+           </div>
+         </div>
+         <div class="card" style="width: 18rem;">
+           <img src="img/nature-benefits.jpg.860x0_q70_crop-scale.jpg" class="card-img-top" alt="...">
+           <div class="card-body">
+            <h5 class="card-title">예를 들면 이렇게 카드가 나옵니다!!</h5>
+            <p class="card-text">여기에 기사 내용이 들어가겠죠.</p>
+            <p class="card-text" style="color:blue !important; font-weight:800;">여기에 코멘트가 들어갑니다.</p>
+           </div>
+         </div>
+         <div class="card" style="width: 18rem;">
+           <img src="img/nature-benefits.jpg.860x0_q70_crop-scale.jpg" class="card-img-top" alt="...">
+           <div class="card-body">
+            <h5 class="card-title">예를 들면 이렇게 카드가 나옵니다!!</h5>
+            <p class="card-text">여기에 기사 내용이 들어가겠죠.</p>
+            <p class="card-text" style="color:blue !important; font-weight:800;">여기에 코멘트가 들어갑니다.</p>
+           </div>
+         </div>
+         <div class="card" style="width: 18rem;">
+           <img src="img/nature-benefits.jpg.860x0_q70_crop-scale.jpg" class="card-img-top" alt="...">
+           <div class="card-body">
+            <h5 class="card-title">예를 들면 이렇게 카드가 나옵니다!!</h5>
+            <p class="card-text">여기에 기사 내용이 들어가겠죠.</p>
+            <p class="card-text" style="color:blue !important; font-weight:800;">여기에 코멘트가 들어갑니다.</p>
+           </div>
+         </div>
+
+      </div>
+   </div>
+ </body>
+</html>
