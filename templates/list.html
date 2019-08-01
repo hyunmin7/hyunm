@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <h3>Order List</h3>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Count</th>
+          <th scope="col">Address</th>
+          <th scope="col">Phone</th>
+        </tr>
+      </thead>
+      <tbody id="order_detail">
+      </tbody>
+</table>
+
+<script>
+window.onload=function() {
+    $.ajax({
+        type: "GET",
+        url: "/get_list",
+        data: {},
+        success : function(response) {
+            let order_list = response['order_list'];
+
+            for (let i = 0; i < order_list.length; i++) {
+                let name = order_list[i]['name'];
+                let count = order_list[i]['count'];
+                let address = order_list[i]['address'];
+                let phone = order_list[i]['phone'];
+
+                add_order_detail(name, count, address, phone)
+            }
+        }
+    })
+}
+
+function add_order_detail(name, count, address, phone) {
+
+    let temp_html = '<tr>\
+        <td>' + name + '</td>\
+        <td>' + count + '</td>\
+        <td>' + address + '</td>\
+        <td>' + phone + '</td>\
+    </tr>';
+
+    $('#order_detail').append(temp_html)
+}
+
+
+
+</script>
+</body>
+</html>

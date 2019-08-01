@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+import logging
 
 app = Flask(__name__)
 
@@ -25,17 +26,29 @@ def order():
         phone = request.form['phone']
 
         # 딕셔너리로 만들어서
-        order_dict = {'name': name, 'count': count, 'address': address, 'phone': phone}
+        order_dict = {'name': name,
+                      'count': count,
+                      'address': address,
+                      'phone': phone,
+                      }
 
         # global 변수에 리스트로 저장
         order_list.append(order_dict)
 
-    return render_template('order.html')
+        return jsonify({'result':'success'})
+    else:
+        return render_template('order.html')
 
 # 주문 보기
-@app.route('/list', methods = ['GET'])
+@app.route('/list', methods=['GET'])
 def list():
-    return jsonify(order_list)
+    return render_template('list.html')
+
+
+@app.route('/get_list', methods=['GET'])
+def get_list():
+    return jsonify({'order_list': order_list})
+
 
 
 if __name__ == '__main__':
